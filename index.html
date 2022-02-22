@@ -80,28 +80,26 @@ function game() {
         console.log('Round ' + i);
 
         let rpsGame = playRound();
-
-        let playerResults = 'Player score: ' + playerScore;
-        let computerResults = 'Computer score: ' + computerScore;
     
         if (rpsGame == 'win') {
             playerScore++;
             console.log('Player wins this round!');
-            console.log(playerResults);
-            console.log(computerResults);
+            playerScore = String(playerScore);
+            console.log('Player score: ' + playerScore);
+            console.log('Computer score: ' + computerScore);
         }
 
         else if (rpsGame == "draw") {
             console.log('Looks like a draw! Womp Womp!');
+            console.log('Player score: ' + playerScore);
+            console.log('Computer score: ' + computerScore);
         }
 
         else {
             computerScore++;
             console.log('Computer wins this round!');
-            let playerResults = 'Player score: ' + String(playerScore);
-            let computerResults = 'Computer score: ' + String(computerScore);
-            console.log(playerResults);
-            console.log(computerResults);
+            console.log('Player score: ' + playerScore);
+            console.log('Computer score: ' + computerScore);
         }
 
     }
