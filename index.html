@@ -27,12 +27,11 @@
     
     }
 
-    let computerSelection = computerPlay();
-
     function playRound(playerSelection, computerSelection) {
         
-        let playerChoice = prompt('Rock, paper or scissors?');
+        let playerChoice = (prompt('Rock, paper or scissors?')).toLowerCase();
         playerSelection = playerChoice.toLowerCase();
+        computerSelection = computerPlay();
 
         if (playerSelection === 'rock' && computerSelection === 'paper') {
             let result = 'lose';
@@ -80,19 +79,19 @@ function game() {
 
         console.log('Round ' + i);
 
-        playRound();
+        let rpsGame = playRound();
 
         let playerResults = 'Player score: ' + String(playerScore);
         let computerResults = 'Computer score: ' + String(computerScore);
     
-        if (playRound() === 'win') {
+        if (rpsGame == 'win') {
             playerScore++;
             console.log('Player wins this round!');
             console.log(playerResults);
             console.log(computerResults);
         }
 
-        else if (playRound() === "draw") {
+        else if (rpsGame == "draw") {
             console.log('Looks like a draw! Womp Womp!');
         }
 
